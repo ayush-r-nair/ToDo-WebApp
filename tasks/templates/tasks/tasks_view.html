@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Your Tasks
+{% endblock  %}
+
+{% block content %}
+    <section class='task-container'>
+        <h1>This is the Tasks lists page</h1> 
+
+        {% for task in tasks %}
+            <div class='task-box'>
+                <h2>
+                    <a href="{% url 'tasks:page' slug=task.slug %}" class='task-detail'>{{ task.title }}</a>
+                </h2>
+                <p> {{ task.date }}</p>
+                <p> {{ task.category }}</p>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}

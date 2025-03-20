@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    User Login Interface
+{% endblock  %}
+
+{% block content %}
+    <h1>Login for exisiting users</h1>
+    <form class="form-with-validation" action="{% url 'users:login' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}"/>
+        {% endif %}
+        <br>
+        <button class="form-submit">Submit</button>
+    </form>
+{% endblock %}

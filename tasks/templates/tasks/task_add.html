@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    New Task
+{% endblock %}
+
+{% block content %}
+    <section class="task-form-container">
+        <h1>New Task to be uploaded</h1>
+        <br>
+        <form class="task-form" action="{% url 'tasks:add' %}" method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="{{ form.title.id_for_label }}">Title:</label>
+                {{ form.title }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.desc.id_for_label }}">Description:</label>
+                {{ form.desc }}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.category.id_for_label }}">Category:</label>
+                {{ form.category }}
+            </div>
+            <br>
+            <button class="form-submit">Add Task</button>
+        </form>
+    </section>
+{% endblock %}

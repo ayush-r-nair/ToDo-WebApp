@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{ task.title }}
+{% endblock  %}
+
+{% block content %}
+    <section>
+        <h1>Your Task : {{ task.title }}</h1> 
+        <br>
+        <p>Published at : {{ task.date }} </p>
+        <p>Description: {{ task.desc }} </p>
+        <p>Category of Task: {{ task.category }} </p>
+        <br>
+        <a class="CRUD" href="{% url 'tasks:complete' task.pk %}">    
+            Mark as completed
+        </a>
+        <a class="CRUD" href="{% url 'tasks:update' task.pk %}">    
+            Update
+        </a>
+        <a class="CRUD" href="{% url 'tasks:delete' task.pk %}">
+            Delete
+        </a>
+    </section>
+{% endblock %}
