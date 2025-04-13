@@ -18,7 +18,7 @@ A simple and efficient **To-Do List Web Application** built with Django. Easily 
 ### 1️⃣ Clone the Repository  
 Run the following command to clone the project:  
 ```sh
-git clone https://github.com/YOUR_USERNAME/TODO-WebApp.git
+git clone https://github.com/ayush-r-nair/TODO-WebApp.git
 cd TODO-WebApp
 ```
 
